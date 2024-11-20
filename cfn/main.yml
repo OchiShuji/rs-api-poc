@@ -306,3 +306,9 @@ Resources:
       Description: Dev Stage
       DeploymentId: !Ref ApiGatewayDeployment
       ApiId: !Ref ApiGatewayWS
+
+Outputs:
+  ApiGatewayWSEndpoint:
+    Value: !Sub wss://${ApiGatewayWS}.execute-api.${AWS::Region}.amazonaws.com/${APIGatewayStage}
+    Export:
+      Name: WebSocketURL
